@@ -1,0 +1,30 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+<link rel="stylesheet"href="{% static 'css/home.css' %}">
+
+{% block content %}
+<div class="content">
+   <div class="head">
+       <img src="{% static 'images/banner-bg.png' %}"style="width: 100%;height:300px;">
+
+       <div class="logo2">
+        <h1 style="color:rgb(20,160,255);text-align:center;position: absolute;top:100px;left:650px;"><< Publish Your Blogs >></h1>       
+       </div>
+
+   {% for key in value %}
+   <div class="card" style="margin: 10px;float: left;">
+      <h2 class="text-center card-title">{{ key.name }}</h2>
+      <img class="card-img-top" src="{{key.image.url}}" alt="Card image cap" style="width: 250px;height: 300px;padding: 10px;">
+      <div class="card-body">
+         <p class="card-text">{{ key.created_at}}</p>
+         <p class="card-text">Category:{{ key.category}}</p>
+      </div>
+      <div class="btn_main">
+        <div class="buy_bt"><a href="{% url 'details' key.reference_id %}"id="ancorbtndetails">See More</a></div>
+      </div>
+    </div>
+{% endfor %}
+</div>
+   {% endblock content %}

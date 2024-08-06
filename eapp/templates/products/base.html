@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Base{% endblock title %}</title>
+<link rel="stylesheet"href="{% static 'css/home.css' %}">
+</head>
+<body>
+  <div class="active">
+    <a href="{% url 'login' %}"style='color:#green;z-index:-2;color:#fff;float:right;text-decoration: none;'>Login/Signup</a>  
+    <a href="{% url 'home' %}"style="text-decoration: none;"><h1 style="color:#fff;">Logo</h1></a>
+  </div>
+
+<div class="sidebar">
+  <a href="{% url 'home' %}">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+
+{% block content %}
+
+{% endblock content %}
+</body>
+</html>

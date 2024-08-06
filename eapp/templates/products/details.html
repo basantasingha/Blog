@@ -1,0 +1,23 @@
+{% load static %}
+{% block title %}<title>Details</title>{% endblock title %}
+<link rel="stylesheet"href="{% static 'css/products.css' %}">
+
+{% block content %}
+<a href="{% url 'home' %}"style="float:right;float:right;margin-right:20px;background-color:blue;color:#fff;text-decoration:none;border-radius:5px;padding:10px 15px;">Back To Home</a>
+<div class="row" style="margin:10px;margin-left: 600px;">
+    <div class="leftcolumn">
+      <div class="card">
+    <h2>{{product.name}}</h2>
+        <h5>{{product.created_at}}</h5>
+<img src="{{ product.image.url }}" alt="Image is missing"style="width:300px;height:400px;">
+
+<p class="price">Category: {{ product.category }}</p>
+</div>
+</div>
+</div>
+<h3><u>About Me:</u></h3>
+<div class="description" style="margin:10px;width: 95%;height:95px;padding:5px; box-shadow: 1px 1px 5px blue;">
+<p style="display:flex;">{{ product.content|safe|linebreaks }}</p>
+</div>
+      
+{% endblock content %}

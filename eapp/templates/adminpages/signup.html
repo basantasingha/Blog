@@ -1,0 +1,16 @@
+{% extends 'adminpages/login.html' %}
+
+{% block title %}Signup{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Sign Up</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Signup</button>
+    </form>
+    <a href="{% url 'login' %}"style="text-decoration:none;color:blue;">Login</a>
+    </div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'adminpages/dashboard.html' %}
+
+{% block title %}Details{% endblock title %}
+
+{% block content %}
+<a href="{% url 'images' %}"style="float:right;margin-right:20px;background-color:blue;color:#fff;text-decoration:none;border-radius:5px;padding:10px 15px;">Back To List</a>
+        <div class="row" style="margin:10px;margin-left: 400px;">
+            <div class="leftcolumn">
+              <div class="card">
+            <h2>{{product.name}}</h2>
+                <h5>{{product.created_at}}</h5>
+        <img src="{{ product.image.url }}" alt="Image is missing"style="width:300px;height:400px;">
+
+        <p class="price">Gender: {{ product.category }}</p>
+    </div>
+        </div>
+        </div>
+        <h3 style="margin-left: 10px;"><u>About Me:</u></h3>
+        <div class="description" style="margin:10px;width: 95%;height:90px;padding:20px; box-shadow: 1px 1px 5px blue;">
+        <p style="display:flex;">{{ product.content|safe|linebreaks }}</p>
+        </div>
+              
+    {% endblock content %}

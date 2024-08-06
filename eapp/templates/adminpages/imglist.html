@@ -1,0 +1,38 @@
+{% extends 'adminpages/dashboard.html' %}
+
+{% block title %}Image List{% endblock title %}
+    
+   {% block content %}
+   <div class="lo"style="width:100%;">
+    <h1><u>Images List</u></h1>
+    <br>
+    <table width="100%">
+        <tr>
+            <th>S.N</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Created At</th>
+            <th>Action</th>
+        </tr>
+
+        {% for key in images %}
+        <tr align="center">
+            <td>{{forloop.counter}}</td>
+            <td>{{key.name}}</td>
+            <td>{{key.category}}</td>
+            <td>{{key.created_at}}</td>
+            <td id="actionbths">
+                <a href="{% url 'edit' key.reference_id %}"id="ancorbtnupdate">Update</a>
+                <a href="{% url 'about' key.reference_id %}"id="ancorbtndetails">Details</a>
+                
+                <form method="POST" action="{% url 'delete' key.reference_id %}">
+                    {% csrf_token %}
+                    <input type="submit" id="deletebtn"value="Delete">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+   </div>
+    
+    {% endblock content %}

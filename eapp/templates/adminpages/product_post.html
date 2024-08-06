@@ -1,0 +1,27 @@
+{% extends 'adminpages/dashboard.html' %}
+
+{% block title %} Post Images {% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+   {% block content %}
+   <style>
+    input{
+        width: 300px;
+        margin:10px;
+    }
+</style>
+
+   <div class="product_post_container">
+    <h1>Post New Image</h1>
+    <form class="postform"method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <br>
+        <button type="submit"style="padding: 10px 20px;background-color: blue;color: #fff;border:none;border-radius:5px;cursor:pointer;">Submit</button>
+    </form>
+   </div>
+    {% endblock content %}

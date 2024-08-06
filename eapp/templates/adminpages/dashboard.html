@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>{% block title %}Dashboard{% endblock title %}</title>
+    <link rel="stylesheet"href="{% static 'css/admin.css' %}">
+</head>
+<body>
+        <div class="Logonav">
+        <a href="{% url 'logout' %}"style="float:right;color:white;margin:5px;padding:10px 15px;border-radius:5px;
+        text-decoration:none;background-color:red;font-family: Arial, Helvetica, sans-serif;
+        cursor:pointer;">Logout</a>
+        <a href="{% url 'home' %}"id="a"><h1 style="color:#fff;">Control Pannel</h1></a>
+        </div>
+        <div class="sidebar">
+            <h3 align="center">{{user}}</h3>
+          <a href="{% url 'dash' %}">Dashboard</a>
+          <a href="{% url 'images' %}">Images</a>
+          <a href="{% url 'category' %}">Post Category</a>
+          <a href="{% url 'post' %}">Image Post</a>
+        </div>
+        
+<div class="container">
+   {% block content %}
+<h1>Dashboard</h1>
+<div class="dashboarddiv">
+<div class="dash1">
+<h3>Total Blogs</h3>
+
+<h2>{{ posted.views }}</h2>
+</div>
+
+<div class="dash2">
+<h3>Total Views</h3>
+
+</div>
+
+<div class="dash3">
+<h3>Today Sell</h3>
+
+</div>
+
+<div class="dash4">
+<h3>Today Earn</h3>
+
+</div>
+</div>
+
+<div class="dashboarddiv1">
+<div class="dash5">
+<h3>Total Sell</h3>
+
+</div>
+
+<div class="dash6">
+<h3>Total Earn</h3>
+
+</div>
+</div>
+    {% endblock content %}
+</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+/* Start Sidebar Css */
+*{
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    top: 52px;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  /* End Sidebar Css */
+
+  .container{
+    position: relative;
+    top: 50px;
+    left:210px;
+    width: 86.5%;
+  }
+.Logonav{
+    height: 50px;
+    background-color: #04AA6D;
+    position:fixed;
+    width: 100%;
+    top:0px;
+    z-index:2;
+}
+#a{
+    text-decoration: none;
+    color: #04AA6D;
+}
+
+/* Start imagelist css */
+td{
+  padding:10px;
+}
+#actionbths{
+  display: flex;
+  justify-content: space-evenly;
+}
+#ancorbtnupdate{
+  text-decoration: none;
+  background-color: blue;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor:pointer;
+}
+#ancorbtndetails{
+  text-decoration: none;
+  background-color: green;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor:pointer;
+}
+#deletebtn{
+  text-decoration: none;
+  background-color: red;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor:pointer;
+}
+/* End imagelist css */
+
+/* Start dashboarddiv css */
+.dashboarddiv{
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+  margin: 20px;
+  text-align: center;
+}
+.dashboarddiv1{
+  display: flex;
+  justify-content:space-evenly;
+  color: #fff;
+  margin: 20px;
+  text-align: center;
+}
+.dash1, .dash2, .dash3, .dash4, .dash5,.dash6{
+  background-color: rgba(20, 100, 255,0.5);
+  width: 300px;
+  height:20px;
+  border-radius: 5px;
+}
+/* End dashboarddiv css */
